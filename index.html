@@ -3,25 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List App</title>
 
-    <!-- Link to external CSS File -->
-    <link rel="stylesheet" href="CSS\style.css">
+    <!-- Link to External CSS File -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
 
-    <!-- header section -->
-    <header>
-        <h1>Todo List Hilmi Apps</h1>
-    </header>
+    <div class="container">
 
-    <!-- main content -->
-    <main></main>
+        <!-- Header Section -->
+        <header>
+            <h1 class="text-3xl font-bold text-center mb-5 text-white">Your To Do List</h1>
+        </header>
 
-    <!-- footer section -->
-    <footer></footer>
+        <!-- Main Content Here -->
+        <main>
+            <!-- Form Section -->
+            <section class="mb-4">
+                <form id="todo-form" class="flex flex-col sm:flex-row gap-3">
+                    
+                    <!-- Todo Input -->
+                    <input type="text" class="border rounded p-2 flex-grow shadow-sm text-white" id="todo-input" placeholder="Add your new To do item" />
 
-    <!-- Link to external JS script -->
-    <script src="js/script.js"></script>
+                    <!-- Date Input -->
+                    <input type="date" class="border rounded p-2 shadow-sm text-white" id="todo-date" />
+
+                    <!-- Add Button -->
+                    <button type="submit" class="border rounded p-2 bg-blue-900 text-white font-semibold hover:bg-green-600 shadow-sm">
+                        Add Todo
+                    </button>
+                </form>
+            </section>
+
+            <!-- Action Section -->
+            <section class="flex pt-2 justify-between items-center mb-4">
+                <!-- Filter Section -->
+                <div class="flex items-center gap-2">
+                    <label for="filter-select" class="text-white">Filter:</label>
+                    <select id="filter-select" class="border rounded p-2 bg-blue-900 shadow-sm text-white">
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <!-- Clear All Button -->
+                <button id="clear-all-btn" class="border rounded p-2 bg-green-900 text-white font-semibold hover:bg-red-600 shadow-sm">
+                    Clear All
+                </button>
+            </section>
+            
+            <!-- Todo List Section -->
+            <section class="pt-2">
+                <header>
+                    <h1 class="text-2xl font-semibold pb-4 text-white">List of To Do</h1>
+                </header>
+
+                <ul class="list-none" id="todo-list">
+                    </ul>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="pt-4 text-center text-white text-sm">
+            <p>&copy; 2025 To Do List Hilmi Apps</p>
+        </footer>
+
+        <!-- Link to External JavaScript File -->
+     <script src="js/script.js"></script>
 </body>
 </html>
